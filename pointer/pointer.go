@@ -8,7 +8,27 @@ func changeValue(testInt *int) int {
 }
 
 func main() {
-    var testNum int = 10
-	testNum=changeValue(&testNum)
-    fmt.Println(testNum)    
+
+    num := 30
+    ptr1 := &num
+
+    fmt.Println(ptr1)
+    fmt.Println(*ptr1)
+
+    num = 40
+    fmt.Println(ptr1)
+    fmt.Println(*ptr1)
+
+    *ptr1 = 50
+    fmt.Println(num)
+    fmt.Println(&num)
+    fmt.Println(ptr1)
+    fmt.Println(*ptr1)
+
+    testNum := 15
+    ptr1 = &testNum
+
+    fmt.Println(&testNum)
+    fmt.Println(ptr1)
+    fmt.Println(*ptr1)
 }
