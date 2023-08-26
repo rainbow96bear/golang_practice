@@ -2,10 +2,24 @@ package main
 
 import "fmt"
 
+func nextValue() func() int {
 
-func main(){
-	checkArr1 := []int{1, 3, 5, 7, 9, 11}
-	checkArr2 := append(checkArr1[:3],checkArr1[4:]...)
-	fmt.Println(checkArr2)
-	fmt.Println(checkArr1)
+	i := 0
+ 	return func() int {
+ 		i++
+ 		return i
+ 	}
 }
+
+func main() {
+	
+	next := nextValue()
+
+	fmt.Println(next())
+	fmt.Println(next())
+	fmt.Println(next())
+
+	anotherNext := nextValue()
+	println(anotherNext()) // 1 다시 시작
+	println(anotherNext()) // 2	
+}	
