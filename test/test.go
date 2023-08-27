@@ -1,6 +1,8 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 func nextValue() func() int {
 
@@ -11,15 +13,14 @@ func nextValue() func() int {
  	}
 }
 
+func practiceTest (x,y int) int {
+	return x * y
+}
 func main() {
-	
-	next := nextValue()
-
-	fmt.Println(next())
-	fmt.Println(next())
-	fmt.Println(next())
-
-	anotherNext := nextValue()
-	println(anotherNext()) // 1 다시 시작
-	println(anotherNext()) // 2	
+	var x, y int
+	_,err := fmt.Scan(&x, &y)
+	if err != nil {
+		fmt.Println(err)
+	}
+	practiceTest(x,y)
 }	
