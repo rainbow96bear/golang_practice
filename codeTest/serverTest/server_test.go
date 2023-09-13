@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"net/http"
 	"net/http/httptest"
 	"strings"
@@ -23,7 +22,6 @@ func TestMyhandler(t *testing.T){
     }
 
 	expectedResponseBody := "rainbowbear님 반갑습니다."
-	fmt.Println(rr.Body.String())
     if rr.Body.String() != expectedResponseBody {
         t.Errorf("Expected body %s, but got %s", expectedResponseBody, rr.Body.String())
     }
