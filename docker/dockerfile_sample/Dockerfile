@@ -7,6 +7,7 @@ WORKDIR /app
 # 현재 디렉토리의 파일들을 컨테이너 내부의 /app 디렉토리로 복사합니다.
 COPY . /app
 
+# Go mod를 초기화
 RUN go mod init myapp
 
 # Go 애플리케이션을 빌드합니다.
