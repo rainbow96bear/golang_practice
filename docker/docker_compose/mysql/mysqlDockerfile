@@ -1,0 +1,8 @@
+# 공식 MySQL 이미지를 기반으로 합니다.
+FROM mysql:latest
+
+# 환경 변수를 설정하여 MySQL 루트 패스워드를 설정합니다.
+ENV MYSQL_ROOT_PASSWORD=1q2w3e4r!
+
+# 초기 SQL 스크립트를 실행합니다.
+COPY ./init.sql /docker-entrypoint-initdb.d/
