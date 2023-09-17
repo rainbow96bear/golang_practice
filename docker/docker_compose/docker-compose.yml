@@ -1,0 +1,25 @@
+version: "1"
+
+services:
+  mysql:
+    build:
+      context: ./mysql
+      dockerfile: mysqlDockerfile
+    ports:
+      - "3333:3306"
+    container_name: mysqlDB
+    environment:
+      MYSQL_ROOT_PASSWORD: 1q2w3e4r!
+      MYSQL_DATABASE: Books
+    restart: always
+
+  go-web:
+    build:
+      context: ./webServer
+      dockerfile: webServerDockerfile
+    ports:
+      - "8080:8080"
+    depends_on:
+      - mysql
+    container_name: GoWebServer
+    restart: always
